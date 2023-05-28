@@ -6,18 +6,6 @@ input.onButtonPressed(Button.A, function () {
         seznam = 0
     }
 })
-input.onButtonPressed(Button.B, function () {
-    seznam += -1
-    if (seznam <= 0) {
-        seznam = 25
-    } else if (seznam >= 26) {
-        seznam = 0
-    }
-})
-input.onGesture(Gesture.Shake, function () {
-    basic.clearScreen()
-    basic.showString("" + (input2))
-})
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     if (seznam == 0) {
         input2 = "" + input2 + "A"
@@ -72,6 +60,20 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     } else if (seznam == 25) {
         input2 = "" + input2 + "Z"
     }
+})
+input.onButtonPressed(Button.B, function () {
+    seznam += -1
+    if (seznam <= 0) {
+        seznam = 25
+    } else if (seznam >= 26) {
+        seznam = 0
+    }
+})
+input.onGesture(Gesture.Shake, function () {
+    basic.clearScreen()
+    basic.showString("" + (input2))
+    input2 = ""
+    seznam = 0
 })
 let seznam = 0
 let input2 = ""
