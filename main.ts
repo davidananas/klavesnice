@@ -1,6 +1,6 @@
 input.onButtonPressed(Button.A, function () {
     seznam += 1
-    if (seznam <= 0) {
+    if (seznam <= -1) {
         seznam = 26
     } else if (seznam >= 27) {
         seznam = 0
@@ -71,7 +71,7 @@ input.onPinPressed(TouchPin.P2, function () {
 })
 input.onButtonPressed(Button.B, function () {
     seznam += -1
-    if (seznam <= 0) {
+    if (seznam <= -1) {
         seznam = 26
     } else if (seznam >= 27) {
         seznam = 0
