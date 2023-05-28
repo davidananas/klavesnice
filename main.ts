@@ -63,7 +63,7 @@ input.onLogoEvent(TouchButtonEvent.Touched, function () {
         input2 = "" + input2 + " "
     }
 })
-input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
+input.onPinPressed(TouchPin.P2, function () {
     basic.clearScreen()
     basic.showString(input2)
     input2 = ""
