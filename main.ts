@@ -71,7 +71,7 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onGesture(Gesture.Shake, function () {
     basic.clearScreen()
-    basic.showString("" + (input2))
+    basic.showString(input2)
     input2 = ""
     seznam = 0
 })
