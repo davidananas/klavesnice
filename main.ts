@@ -2,7 +2,7 @@ input.onButtonPressed(Button.A, function () {
     seznam += 1
     if (seznam <= 0) {
         seznam = 26
-    } else if (seznam >= 28) {
+    } else if (seznam >= 27) {
         seznam = 0
     }
 })
@@ -112,4 +112,7 @@ let textový_seznam = [
 ]
 basic.forever(function () {
     basic.showString("" + (textový_seznam[seznam]))
+    if (seznam == 26) {
+        basic.showString("\" \"")
+    }
 })
