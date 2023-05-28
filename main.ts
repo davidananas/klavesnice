@@ -1,12 +1,12 @@
 input.onButtonPressed(Button.A, function () {
     seznam += 1
     if (seznam <= 0) {
-        seznam = 25
-    } else if (seznam >= 26) {
+        seznam = 26
+    } else if (seznam >= 28) {
         seznam = 0
     }
 })
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+input.onLogoEvent(TouchButtonEvent.Touched, function () {
     if (seznam == 0) {
         input2 = "" + input2 + "A"
     } else if (seznam == 1) {
@@ -59,25 +59,26 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
         input2 = "" + input2 + "Y"
     } else if (seznam == 25) {
         input2 = "" + input2 + "Z"
+    } else {
+        input2 = "" + input2 + " "
     }
 })
-input.onButtonPressed(Button.B, function () {
-    seznam += -1
-    if (seznam <= 0) {
-        seznam = 25
-    } else if (seznam >= 26) {
-        seznam = 0
-    }
-})
-input.onGesture(Gesture.Shake, function () {
+input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     basic.clearScreen()
     basic.showString(input2)
     input2 = ""
     seznam = 0
 })
+input.onButtonPressed(Button.B, function () {
+    seznam += -1
+    if (seznam <= 0) {
+        seznam = 26
+    } else if (seznam >= 27) {
+        seznam = 0
+    }
+})
 let seznam = 0
 let input2 = ""
-basic.showString("MAX 10 ZNAKU")
 input2 = ""
 seznam = 0
 let textový_seznam = [
@@ -106,7 +107,8 @@ let textový_seznam = [
 "W",
 "X",
 "Y",
-"Z"
+"Z",
+" "
 ]
 basic.forever(function () {
     basic.showString("" + (textový_seznam[seznam]))
